@@ -92,3 +92,6 @@ ul{
   width: 45%;
   height: 450px;
 }
+.table td,th{
+  text-align: center;
+}
