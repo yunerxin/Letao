@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>乐淘网-首页</title>
+  <title>乐淘网-二级分类</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -48,17 +48,33 @@
       <i class="glyphicon glyphicon-align-justify"></i>
     </a>
     <a class="pull-right" href="javascript:;">
-     <i class="glyphicon glyphicon-log-out"></i>
+      <i class="glyphicon glyphicon-log-out"></i>
     </a>
   </div>
   <div class="container-fluid">
     <ol class="breadcrumb">
       <li><a href="javascript:;">管理系统</a></li>
       <li><a href="javascript:;">分类管理</a></li>
-      <li class="active">二级分类</li>
+      <li class="active">二级管理</li>
     </ol>
-  </div>
+    <button class="add-btn btn btn-default mb20">添加分类</button>
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>序号</th>
+        <th>一级分类名称</th>
+        <th>二级分类名称</th>
+        <th>一级分类Logo</th>
+      </tr>
+      </thead>
+      <tbody>
 
+      </tbody>
+    </table>
+    <div class="text-right">
+      <ul id="paginator"></ul>
+    </div>
+  </div>
 
   <div class="dropmod modal fade">
     <div class="modal-dialog modal-sm">
@@ -77,13 +93,79 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="addmod modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">添加二级分类</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form">
+            <div class="form-group">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                  <span class="dropdown-text">请选择一级分类</span>
+                  <input type="hidden" name="categoryId" class="categoryId">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+                </ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="brandName" class="form-control" id="brandName" placeholder="请输入二级分类">
+            </div>
+            <div class="form-group">
+            <button class="up-btn btn btn-default">
+              上传图片
+              <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic">
+            </button>
+            </div>
+            <div class="form-group">
+              <img class="up-img" src="images/none.png" width=100 height=100 alt="">
+
+              <input type="hidden" name="brandLogo" class="brandLogo">
+              <input type="hidden" name="hot" value="1">
+            </div>
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" form="form" class="btn_confirm btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+<script type="text/html" id="tpl">
+  {{each rows v i}}
+  <tr>
+    <td>{{(page-1)*size+(i+1)}}</td>
+    <td>{{v.categoryName}}</td>
+    <td>{{v.brandName}}</td>
+    <td><img src="{{v.brandLogo}}" width=50 height=50 alt=""></td>
+  </tr>
+  {{/each}}
+</script>
+<script type="text/html" id="tpl2">
+  {{each rows v i}}
+  <li role="presentation"><a data-id="{{v.id}}" href="javascript:;">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
 <script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="js/second.js"></script>
 </body>
 </html>

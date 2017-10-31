@@ -3,7 +3,7 @@
  */
 $(function () {
     var currentPage=1;
-    var pageSize=3;
+    var pageSize=10;
      function render() {
          $.ajax({
              type: 'get',

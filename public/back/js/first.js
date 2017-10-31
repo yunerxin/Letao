@@ -34,19 +34,39 @@ $(function () {
     $('.add-btn').on('click',function () {
         $('.addmod').modal('show');
     });
-    $('.sure-btn').on('click',function () {
+    //表单验证
+
+    $('form').bootstrapValidator({
+        feedbackIcons:{
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields:{
+            categoryName:{
+                validators:{
+                    notEmpty:{
+                        message:'用户名不能为空'
+                    }
+                }
+            }
+        }
+    });
+    //表单验证成功事件
+    $('#form').on('success.form.bv',function (e) {
+        e.preventDefault();
         $.ajax({
             type:'post',
             url:'/category/addTopCategory',
-            data:$('#form').serialize(),
+            data:$('form').serialize(),
             success:function (data) {
-                // console.log(data);
+                console.log(data);
                 if(data.success){
-                   currentPage=1;
-                   render();
-                   $('.addmod').modal('hide');
-               }
+                    currentPage=1;
+                    render();
+                    $('.addmod').modal('hide');
+                }
             }
         });
     });
-})
+});

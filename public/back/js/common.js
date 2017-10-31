@@ -30,6 +30,7 @@ $(function () {
    $('.header .pull-left').on('click',function () {
        $('.aside').toggleClass('click');
        $('.main').toggleClass('click');
+       $('.main .header').toggleClass('click');
    })
     // 退出登录
     $('.header .pull-right').on('click',function () {

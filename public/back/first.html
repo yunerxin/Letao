@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>乐淘网-首页</title>
+  <title>乐淘网-一级分类</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -101,15 +101,16 @@
         </div>
         <div class="modal-body">
 
-
-          <form class="form-horizontal" id="form">
-                <input type="text" name="categoryName" class="form-control" id="categoryName" placeholder="请输入一级分类">
+          <form id="form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="请输入一级分类">
+            </div>
           </form>
 
         </div>
         <div class="modal-footer">
           <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="button" form="form" class="sure-btn btn btn-primary">确定</button>
+          <button type="submit" form="form" class="sure-btn btn btn-primary">确定</button>
         </div>
       </div>
     </div>
@@ -123,13 +124,14 @@
     </tr>
     {{/each}}
   </script>
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
-  <script src="lib/artTemplate/template-web.js"></script>
-  <script src="lib/nprogress/nprogress.js"></script>
-  <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/first.js"></script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/first.js"></script>
+
 </body>
 </html>
