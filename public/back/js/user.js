@@ -5,7 +5,6 @@ $(function () {
     var currentPage=1;
     var pageSize=3;
      function render() {
-         console.log(pageSize);
          $.ajax({
              type: 'get',
              url: '/user/queryUser',
@@ -32,4 +31,24 @@ $(function () {
          });
      }
     render();
+    $('tbody').on('click','.btn',function () {
+        $('.usermod').modal('show');
+        var id=$(this).parent().data('id');
+        var isDelete=$(this).parent().data('isDelete');
+        isDelete=isDelete==1?0:1;
+        $('.user-btn').off().on('click',function () {
+            $.ajax({
+                type:'post',
+                url:'/user/updateUser',
+                data:{
+                    id:id,
+                    isDelete:isDelete
+                },
+                success:function (data) {
+                   $('.usermod').modal('hide');
+                    render();
+                }
+            });
+        });
+    })
 })
