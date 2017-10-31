@@ -57,8 +57,22 @@
       <li><a href="javascript:;">分类管理</a></li>
       <li class="active">一级管理</li>
     </ol>
-  </div>
+    <button class="add-btn btn btn-default mb20">添加分类</button>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>分类名称</th>
+        </tr>
+      </thead>
+      <tbody>
 
+      </tbody>
+    </table>
+    <div class="text-right">
+      <ul id="paginator"></ul>
+    </div>
+  </div>
 
   <div class="dropmod modal fade">
     <div class="modal-dialog modal-sm">
@@ -78,12 +92,44 @@
       </div>
     </div>
   </div>
+  <div class="addmod modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">添加一级分类</h4>
+        </div>
+        <div class="modal-body">
+
+
+          <form class="form-horizontal" id="form">
+                <input type="text" name="categoryName" class="form-control" id="categoryName" placeholder="请输入一级分类">
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" form="form" class="sure-btn btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
   </div>
+  </div>
+  <script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+      <td>{{(page-1)*size+(i+1)}}</td>
+      <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+  </script>
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
+  <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <script src="js/common.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/first.js"></script>
 </body>
 </html>
