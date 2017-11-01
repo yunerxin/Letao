@@ -62,6 +62,8 @@ $(function () {
             success:function (data) {
                 console.log(data);
                 if(data.success){
+                    $('form')[0].reset();
+                    $('form').data('bootstrapValidator').resetForm();
                     currentPage=1;
                     render();
                     $('.addmod').modal('hide');
