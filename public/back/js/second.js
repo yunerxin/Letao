@@ -99,7 +99,7 @@ $(function () {
     });
         $('form').on('success.form.bv',function (e) {
         e.preventDefault();
-            console.log($('form').serialize());
+            // console.log($('form').serialize());
                 $.ajax({
             type:'post',
             url:'/category/addSecondCategory',
