@@ -1,0 +1,16 @@
+.lt_info{
+  height: 30px;
+  background-color: #eee;
+  padding: 0 10px;
+}
+.lt_info a{
+  float: left;
+  width: 25%;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  color: #666;
+  font-size: 12px;
+}
