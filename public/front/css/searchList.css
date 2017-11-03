@@ -14,3 +14,44 @@
   color: #666;
   font-size: 12px;
 }
+.lt_content .product{
+  width: 100%;
+  padding:0 10px;
+}
+.lt_content .product a{
+  display: block;
+  width: 48%;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding-bottom: 10px;
+  float: left;
+  margin-top: 4%;
+}
+.lt_content .product a:nth-child(odd){
+  float: left;
+}
+.lt_content .product a:nth-child(even){
+  float: right;
+}
+.lt_content .product p,
+.lt_content .product span{
+  color: #666;
+  /*text-align: center;*/
+}
+.lt_content .product img{
+  width: 100%;
+}
+.lt_content .product span:first-child{
+  color: red;
+  margin-right: 5px;
+}
+.lt_content .product span:last-child{
+  text-decoration: line-through;
+}
+.product .pol{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.lt_content .lt_info .orange{
+  color: darkorange;
+}

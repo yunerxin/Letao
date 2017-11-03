@@ -14,7 +14,7 @@
 }
 .lt_content .product a{
   display: block;
-  width: 46%;
+  width: 48%;
   border: 1px solid #ccc;
   text-align: center;
   padding-bottom: 10px;
@@ -22,7 +22,10 @@
   margin-top: 4%;
 }
 .lt_content .product a:nth-child(odd){
-  margin-right: 4%;
+  float: left;
+}
+.lt_content .product a:nth-child(even){
+  float: right;
 }
 .lt_content .product p,
 .lt_content .product span{

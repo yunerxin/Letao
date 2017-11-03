@@ -32,11 +32,11 @@
             上架时间
             <i class="fa fa-angle-down"></i>
           </a>
-          <a href="javascript:;">
+          <a data-type='price' class="bd" href="javascript:;">
             价格
             <i class="fa fa-angle-down"></i>
           </a>
-          <a href="javascript:;">
+          <a data-type="num" class="bd" href="javascript:;">
             库存
             <i class="fa fa-angle-down"></i>
           </a>
@@ -45,14 +45,59 @@
             <i class="fa fa-angle-down"></i>
           </a>
         </div>
+        <div class="product mui-clearfix">
+
+        </div>
       </div>
     </div>
   </div>
   <!--底部-->
+  <div class="lt_footer">
+    <ul class="mui-clearfix">
+      <li>
+        <a href="index.html">
+          <i class="fa fa-home"></i>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <i class="fa fa-bars"></i>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <i class="fa fa-user"></i>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
+<script type="text/html" id="tpl">
+  {{if data.length===0}}
+  <p class="pol">没有搜索到相应的商品</p>
+  {{/if}}
+  {{each data v i}}
+  <a href="product.html?productId={{v.id}}" data-type="{{}}">
+    <img src="{{v.pic[0].picAddr}}" alt="">
+    <p class="mui-ellipsis-2">{{v.proName}}</p>
+    <p><span>&yen;{{v.price}}</span><span>&yen;{{v.oldPrice}}</span></p>
+    <button class="mui-btn-blue">立即购买</button>
+  </a>
+  {{/each}}
+</script>
 <script src="lib/zepto/zepto.min.js"></script>
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/mui/js/mui.min.js"></script>
+<script src="js/comment.js"></script>
 <script src="js/searchList.js"></script>
 </body>
 </html>
