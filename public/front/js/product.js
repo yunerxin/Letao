@@ -6,6 +6,7 @@ mui('.mui-scroll-wrapper').scroll({
 });
 
 // console.log(result.getresult('productId'));
+//页面渲染
 var id=result.getresult('productId');
 $.ajax({
     type:'get',
@@ -14,7 +15,7 @@ $.ajax({
         id:id
     },
     success:function (data) {
-        console.log(data);
+        // console.log(data);
         var arr=data.size.split('-');
         var newarr=[];
         for(var i=arr[0];i<arr[1];i++){
@@ -28,4 +29,34 @@ $.ajax({
         });
         mui(".mui-numbox").numbox();
     }
+});
+//加入购物车
+var size='';
+$('.mui-scroll').on('click','.p',function () {
+    size=$(this).val();
+    $(this).addClass('now').siblings().removeClass('now');
+});
+$('.add-cart').on('click',function () {
+    var num=$('.mui-numbox-input').val();
+    $.ajax({
+        type:'post',
+        url:' /cart/addCart',
+        data:{
+            productId:id,
+            size:size,
+            num:num
+        },
+        success:function (data) {
+            // console.log(data);
+            if(size==""){
+                mui.toast('请选择尺码');
+                return;
+            }
+            if(data.error===400){
+                location.href='login.html?jumpUrl='+location.href;
+            }else {
+                mui.toast('加入购物车成功')
+            }
+        }
+    });
 });

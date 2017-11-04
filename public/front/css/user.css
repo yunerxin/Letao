@@ -1,0 +1,18 @@
+.lt_footer li a, p{
+  color: #333;
+}
+.phone{
+  color:#333;
+  font-size: 15px;
+}
+.logout{
+  margin: 10px;
+  height: 33px;
+  line-height: 33px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+}
+.logout a{
+  color: #666;
+}

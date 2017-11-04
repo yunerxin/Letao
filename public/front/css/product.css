@@ -5,6 +5,7 @@
   position: fixed;
   bottom:0;
   padding: 0 10px;
+  z-index: 999;
 }
 .cart .t{
    height: 52px;
@@ -48,6 +49,13 @@
   border: 1px solid #ccc;
   /*margin-top: 10px;*/
 }
+.lt_content .size .p.now{
+  background-color: #069;
+}
+/*.now{*/
+  /*background-color: #069;*/
+
+/*}*/
 .lt_content .num{
   padding: 10px;
   border-top: 1px solid #ccc;

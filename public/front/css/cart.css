@@ -1,0 +1,46 @@
+.totle{
+  position: fixed;
+  bottom:52px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #eee;
+  font-size: 13px;
+  height: 30px;
+  z-index: 999;
+}
+.totle span{
+  padding-left:10px;
+  height: 30px;
+  text-align: center;
+  color: red;
+}
+.totle span:first-child{
+  line-height: 30px;
+  font-weight: 700;
+}
+.totle span:last-child{
+  background-color: red;
+  padding:5px 15px;
+  color:#fff
+}
+.mui-table-cell p{
+  margin-bottom: 5px;
+  color: #333;
+}
+.left img{
+  width: 60px;
+  height: 60px;
+}
+.left{
+  margin-right: 10px;
+}
+.right{
+  overflow: hidden;
+  /*margin-left: 10px;*/
+}
+.right .price{
+  color: red;
+}
+.right .oldPrice{
+  text-decoration: line-through;
+}

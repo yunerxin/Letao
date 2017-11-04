@@ -16,5 +16,10 @@ var result={
    },
     getresult:function (key) {
         return this.getobj()[key];
+    },
+    checklogin:function (data) {
+      if(data.error==400){
+          location.href='login.html?jumpUrl='+location.href;
+      }
     }
 }
