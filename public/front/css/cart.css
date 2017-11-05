@@ -44,3 +44,12 @@
 .right .oldPrice{
   text-decoration: line-through;
 }
+.size .s{
+  padding: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  line-height: 35px;
+}
+.size .s.now{
+  background-color: #069;
+}

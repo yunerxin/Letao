@@ -20,7 +20,7 @@ $(function () {
                     type:'get',
                     url:'/user/logout',
                     success:function (data) {
-                        console.log(data);
+                        // console.log(data);
                         location.href='login.html';
                     }
                 });

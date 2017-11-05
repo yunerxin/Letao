@@ -31,31 +31,32 @@ $.ajax({
     }
 });
 //加入购物车
-var size='';
 $('.mui-scroll').on('click','.p',function () {
-    size=$(this).val();
     $(this).addClass('now').siblings().removeClass('now');
 });
 $('.add-cart').on('click',function () {
     var num=$('.mui-numbox-input').val();
+    if(!$('.p.now').html()){
+        mui.toast('请选择尺码');
+        return;
+    };
+    console.log(num);
+    console.log($('.p.now').html());
     $.ajax({
         type:'post',
         url:' /cart/addCart',
         data:{
             productId:id,
-            size:size,
-            num:num
+            num:num,
+            size:$('.p.now').html(),
         },
         success:function (data) {
-            // console.log(data);
-            if(size==""){
-                mui.toast('请选择尺码');
-                return;
-            }
+            console.log(data);
+            if(data.success){
+                mui.toast('加入购物车成功');
+            };
             if(data.error===400){
                 location.href='login.html?jumpUrl='+location.href;
-            }else {
-                mui.toast('加入购物车成功')
             }
         }
     });
